@@ -9,14 +9,14 @@ public class TriangleOfStars
 {
     public static void main(String [] args)
     {
-        for(int num = 5; num >0; num--)
+        int rows = 5;
+        for(int x = 0; x<rows; x++)
         {
-            if(num>0)
-            {
-                for(int star = 5; star>0; star--)
-                    System.out.print("*");
-                    
-            }
+            for(int k = 0; k<x; k++)
+                System.out.print(" ");
+            for(int z = 5-x; z>0; z--)
+                System.out.print("*");
+                System.out.println();
         }
     }
 }

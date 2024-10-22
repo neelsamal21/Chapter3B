@@ -13,46 +13,40 @@ public class Palendrome
        Scanner keyboard = new Scanner(System.in);
        System.out.println("Enter your palindrome ");
        String palendrome = keyboard.nextLine();
+       
        palendrome = palendrome.toUpperCase();
        int numchar = palendrome.length();
-       char first = palendrome.charAt(0);
-       char second = palendrome.charAt(1);
-       char last = palendrome.charAt(palendrome.length()-1);
-       char seclast = palendrome.charAt(palendrome.length()-2);
-       int forward = 2;
-       int backward = palendrome.length()-2;
-       String condensedpal = palendrome.substring(forward,palendrome.length()-2);
-       int checkchar = 0;
+       char first;
+       char last;
+       int forward = 0;
+       int backward = numchar-1;
+       boolean isPalendrome = true;
        
-       if(first==last && second == seclast)
+       while(forward<backward)
        {
-           checkchar = 4;
-           numchar =- 4;
-           while(numchar>0)
-           {
-               forward += 1;
-               backward -= 1;
-               String check = palendrome.substring(forward,backward);
-               if(Character.isWhitespace(second))
-                   check = palendrome.substring(forward +1,backward);
-                   System.out.println("The string is NOT a palindrome");
-                   numchar -= 1;
-               if(Character.isWhitespace(seclast))  
-                   check = palendrome.substring(forward,backward+1);
-                   System.out.println("The string is NOT a palindrome");
-                   numchar -= 1;
-               if(check.charAt(forward)==check.charAt(backward))
-                   checkchar += 2;
-                   
-                   numchar -= 2;
-                   
+           first = palendrome.charAt(forward);
+           last = palendrome.charAt(backward);
+           
+           if(Character.isWhitespace(first))
+                   forward +=1;
+                   first = palendrome.charAt(forward);
+           if(Character.isWhitespace(last))  
+                   backward -=1;
+                   last = palendrome.charAt(backward);
+
+           if(first != last){
+               isPalendrome = false;
+               break;
+            }
+           forward += 1;
+           backward -=1;       
            }
            
-       }
+       if(isPalendrome)
+           System.out.println("The string is a palindrome");
        else
-       {
            System.out.println("The string is NOT a palindrome");
-       }
+       
        
    }
 }
