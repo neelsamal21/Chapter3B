@@ -13,15 +13,18 @@ public class FibonacciSequence
         Scanner keyboard = new Scanner(System.in);
         System.out.println("What number of Fibonacci's sequance would you to see till ?");
         int num = keyboard.nextInt();
-        int start = 0;
+        int first = 0;
         int second = 1;
         int next;
-        for(int x=0; x<=num;x=second+next)
+
+        for(int x=0; first <=num;)
         {
-            System.out.println(start+second);
-            next=start+second;
-            
+            System.out.print(first + " ");
+            next=first+second;
+            first = second;
+            second = next;
             
         }
+        System.out.println();
     }
 }
