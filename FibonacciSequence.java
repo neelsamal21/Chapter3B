@@ -11,7 +11,7 @@ public class FibonacciSequence
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("What number of Fibonacci's sequance would you to see till ?");
+        System.out.println("What number of Fibonacci's sequance would you to see ?");
         int num = keyboard.nextInt();
         int first = 0;
         int second = 1;
